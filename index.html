@@ -11,22 +11,6 @@
     </style>
     <script src="https://kit.fontawesome.com/a273e5c67b.js" crossorigin="anonymous"></script>
     <script>
-      /**
-       * Google-supplied code to prevent the form from
-       * submitting.
-       */
-      function preventFormSubmit() {
-        console.log('Running preventFormSubmit()');
-        var forms = document.querySelectorAll('form');
-        for (var i = 0; i < forms.length; i++) {
-          forms[i].addEventListener('submit', function(event) {
-            event.preventDefault();
-          });
-        }
-      }
-      
-      window.addEventListener('load', preventFormSubmit);
-
       function validateForm() {
         console.log('Running validateForm()');
 
@@ -143,22 +127,16 @@
        * a success or failure handler in order to pass values into the
        * HTML from the gs code.
        */
-      function handleFormSubmit(formObject) {
+      function handleFormSubmit() {
         console.log('Running handleFormSubmit()');
-        if (validateForm())
+        // if (validateForm())
+        if (true)
         {
           document.getElementById('request').style.display="none";
           document.getElementById('loading').style.display="block";
-          google.script.run.withSuccessHandler(formSubmitted).processFormSubmit(formObject);
+          document.getElementById('request').submit();
+          document.getElementById('output').style.display="block";
         }
-      }
-
-      function formSubmitted(output) {
-        console.log('Running formSubmitted()');
-        document.getElementById('loading').style.display="none";
-        document.getElementById('output').style.display="block";
-        document.getElementById('output').innerHTML= output;
-        // location.reload();
       }
     </script>
   </head>
@@ -178,6 +156,7 @@
         <!-- // Notes and Documentation // -->
         <span class="w3-xlarge">Request a Performance</span>
         <p>Please submit your request with as much lead time as possible. Entries with a <span class="w3-text-red">*</span> are required.</p>
+        <p>Revision 1</p>
       </div>
       <div class="w3-container">
 
@@ -193,7 +172,20 @@
         </div>
 
         <!-- // Begin Form // -->
-        <form onsubmit="handleFormSubmit(this)" name="request" id="request">
+        <form id="request" name="request" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeOUtlovVu4hvptnr_Q3xzUQ4f3MyOdVSHY_-3ij5EzH5fD6Q/formResponse" onsubmit="return handleFormSubmit()" method="post">
+          <input type="hidden" id="entry.595770542" name="entry.595770542" value="entry.595770542">
+          <input type="hidden" id="entry.514284008" name="entry.514284008" value="entry.514284008">
+          <input type="hidden" id="entry.684046961" name="entry.684046961" value="entry.684046961">
+          <input type="hidden" id="entry.2118181637" name="entry.2118181637" value="entry.2118181637">
+          <input type="hidden" id="entry.1779666222" name="entry.1779666222" value="entry.1779666222">
+          <input type="hidden" id="entry.117832584" name="entry.117832584" value="entry.117832584">
+          <input type="hidden" id="entry.1996365247" name="entry.1996365247" value="entry.1996365247">
+          <input type="hidden" id="entry.2006112932" name="entry.2006112932" value="entry.2006112932">
+          <input type="hidden" id="entry.833271710" name="entry.833271710" value="entry.833271710">
+          <input type="hidden" id="entry.765423839" name="entry.765423839" value="entry.765423839">
+          <input type="hidden" id="entry.1923996314" name="entry.1923996314" value="entry.1923996314">
+          <input type="hidden" id="entry.1635023313" name="entry.1635023313" value="entry.1635023313">
+          
           <div class="w3-section">
 
             <!-- // Name // -->
