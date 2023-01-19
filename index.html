@@ -150,274 +150,279 @@
 
 
 <body>
-  <header class="w3-row w3-container">
-    <h1 class="w3-xxlarge">Request a Performance</h1>
-    <p class="w3-large">Please submit your request with as much lead time as possible. Entries with a <span
-        class="w3-text-red">*</span> are required.</p>
-  </header>
+      <header class="w3-row w3-container">
+        <h1 class="w3-xlarge">Request a Performance</h1>
+        <p class="w3-large">Please submit your request with as much lead time as possible. Entries with a <span
+            class="w3-text-red">*</span> are required.</p>
+      </header>
 
-  <!-- // Loading // -->
-  <div id="loading" name="loading" class="w3-row w3-container w3-center" style="display: none">
-    <p>Submitting your performance request...</p>
-    <i class="fa-solid fa-spinner w3-spin"></i>
-  </div>
-
-  <!-- // Output // -->
-  <div id="output" name="output" class="w3-row w3-container" style="display: none">
-    <p>This doesn't do anything. Yet.</p>
-  </div>
-
-  <!-- // Begin Form // -->
-  <form id="request" name="request"
-    action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeOUtlovVu4hvptnr_Q3xzUQ4f3MyOdVSHY_-3ij5EzH5fD6Q/formResponse"
-    onsubmit="return handleFormSubmit()" method="post">
-
-    <!-- // Name Validation // -->
-    <div id="val_name" name="val_name" class="w3-row w3-container w3-yellow w3-display-container" style="display: none">
-      <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
-          class="fas fa-times"></i></span>
-      <p>You must provide us with your name.</p>
-    </div>
-
-    <!-- // Name // -->
-    <div id="input_name" name="input_name" class="w3-row w3-container">
-      <label for="name" class="w3-large"><b>Your Name <span class="w3-text-red">*</span></b></label>
-      <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="text" id="name"
-        name="entry.595770542" required />
-    </div>
-
-    <!-- // Email Address and/or Phone Number Validation // -->
-    <div id="val_email_phone" name="val_email_phone" class="w3-row w3-container w3-yellow w3-display-container"
-      style="display: none">
-      <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
-          class="fas fa-times"></i></span>
-      <p>You must provide us with an email address <strong>and/or</strong> a phone number.</p>
-    </div>
-
-    <!-- // Email Address and/or Phone Number // -->
-    <div id="input_email_phone" name="input_email_phone" class="w3-row w3-container">
-      <b>Please provide us with: <span class="w3-text-red">*</span></b>
-      <div class="w3-cell-row">
-        <div class="w3-cell w3-mobile">
-          <!-- // Email Address // -->
-          <label for="email" class="w3-large"><i class='fas fa-at'></i> <b>Your Email Address</b></label>
-          <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="email" id="email"
-            name="entry.1412901961" placeholder="user@domain.com" />
-        </div>
-        <div class="w3-cell w3-cell-middle w3-center w3-mobile">
-          <p>and/or
-        </div>
-        <div class="w3-cell w3-mobile">
-          <!-- // Phone Number // -->
-          <label for="phone" class="w3-large"><i class='fas fa-phone-alt'></i> <b>Your Phone Number</b></label>
-          <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="tel" id="phone"
-            name="entry.514284008" placeholder="+1 234-576-8900" />
-        </div>
+      <!-- // Loading // -->
+      <div id="loading" name="loading" class="w3-row w3-container w3-center" style="display: none">
+        <p>Submitting your performance request...</p>
+        <i class="fa-solid fa-spinner w3-spin"></i>
       </div>
-    </div>
 
-    <!-- // Description Validation // -->
-    <div id="val_description" name="val_description" class="w3-row w3-container w3-yellow w3-display-container"
-      style="display: none">
-      <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
-          class="fas fa-times"></i></span>
-      <p>You must provide an event name!</p>
-    </div>
+      <!-- // Output // -->
+      <div id="output" name="output" class="w3-row w3-container" style="display: none">
+        <p>This doesn't do anything. Yet.</p>
+      </div>
 
-    <!-- // Description // -->
-    <div id="input_description" name="input_description" class="w3-row w3-container">
-      <label for="description" class="w3-large"><b>Event Name <span class="w3-text-red">*</span></b></label>
-      <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="text" id="description"
-        name="entry.684046961" placeholder="Dragon and Lion Wedding" required />
-    </div>
+      <!-- // Begin Form // -->
+      <form id="request" name="request"
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeOUtlovVu4hvptnr_Q3xzUQ4f3MyOdVSHY_-3ij5EzH5fD6Q/formResponse"
+        onsubmit="return handleFormSubmit()" method="post">
 
-    
-    <!-- // Event Type Validation // -->
-    <div id="val_eventtype" name="val_eventtype" class="w3-row w3-container w3-yellow w3-display-container"
-      style="display: none">
-      <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
-          class="fas fa-times"></i></span>
-      <p>You must select an event type!</p>
-    </div>
+        <!-- // Name Validation // -->
+        <div id="val_name" name="val_name" class="w3-row w3-container w3-yellow w3-display-container"
+          style="display: none">
+          <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
+              class="fas fa-times"></i></span>
+          <p>You must provide us with your name.</p>
+        </div>
 
-    <!-- // Event Type // -->
-      <div id="input_eventtype" name="input_eventtype" class="w3-row w3-container">
-      <label class="w3-large"><b>Event Type <span class="w3-text-red">*</span></b></label>
-      <br />
-      <input type="radio" id="eventtype1" name="entry.2118181637" class="w3-radio" value="Company Event"
-        onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='none'">
-      <label for="eventtype1">Company Event</label><br />
+        <!-- // Name // -->
+        <div id="input_name" name="input_name" class="w3-row w3-container">
+          <label for="name" class="w3-large"><b>Your Name <span class="w3-text-red">*</span></b></label>
+          <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="text" id="name"
+            name="entry.595770542" required />
+        </div>
 
-      <input type="radio" id="eventtype2" name="entry.2118181637" class="w3-radio" value="Festival"
-        onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='block'">
-      <label for="eventtype2">Festival</label><br />
+        <!-- // Email Address and/or Phone Number Validation // -->
+        <div id="val_email_phone" name="val_email_phone" class="w3-row w3-container w3-yellow w3-display-container"
+          style="display: none">
+          <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
+              class="fas fa-times"></i></span>
+          <p>You must provide us with an email address <strong>and/or</strong> a phone number.</p>
+        </div>
 
-      <input type="radio" id="eventtype3" name="entry.2118181637" class="w3-radio" value="K-12 Education"
-        onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='block'; document.getElementById('input_public').style.display='none'">
-      <label for="eventtype3">K-12 Education</label><br />
+        <!-- // Email Address and/or Phone Number // -->
+        <div id="input_email_phone" name="input_email_phone" class="w3-row w3-container">
+          <b>Please provide us with: <span class="w3-text-red">*</span></b>
+          <div class="w3-cell-row">
+            <div class="w3-cell w3-mobile">
+              <!-- // Email Address // -->
+              <label for="email" class="w3-large"><i class='fas fa-at'></i> <b>Your Email Address</b></label>
+              <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="email"
+                id="email" name="entry.1412901961" placeholder="user@domain.com" />
+            </div>
+            <div class="w3-cell w3-cell-middle w3-center w3-mobile">
+              <p>and/or
+            </div>
+            <div class="w3-cell w3-mobile">
+              <!-- // Phone Number // -->
+              <label for="phone" class="w3-large"><i class='fas fa-phone-alt'></i> <b>Your Phone Number</b></label>
+              <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="tel"
+                id="phone" name="entry.514284008" placeholder="+1 234-576-8900" />
+            </div>
+          </div>
+        </div>
 
-      <input type="radio" id="eventtype4" name="entry.2118181637" class="w3-radio" value="Private Event"
-        onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='none'">
-      <label for="eventtype4">Private Event</label><br />
+        <!-- // Description Validation // -->
+        <div id="val_description" name="val_description" class="w3-row w3-container w3-yellow w3-display-container"
+          style="display: none">
+          <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
+              class="fas fa-times"></i></span>
+          <p>You must provide an event name!</p>
+        </div>
 
-      <input type="radio" id="eventtype5" name="entry.2118181637" class="w3-radio" value="Store Opening"
-        onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='none'">
-      <label for="eventtype5">Store Opening</label><br />
+        <!-- // Description // -->
+        <div id="input_description" name="input_description" class="w3-row w3-container">
+          <label for="description" class="w3-large"><b>Event Name <span class="w3-text-red">*</span></b></label>
+          <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="text"
+            id="description" name="entry.684046961" placeholder="Dragon and Lion Wedding" required />
+        </div>
 
-      <input type="radio" id="eventtype6" name="entry.2118181637" class="w3-radio" value="Store Event"
-        onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='none'">
-      <label for="eventtype6">Store Event</label><br />
 
-      <input type="radio" id="eventtype7" name="entry.2118181637" class="w3-radio" value="Student Organization Event"
-        onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='block'; document.getElementById('input_public').style.display='block'">
-      <label for="eventtype7">Student Organization Event</label><br />
+        <!-- // Event Type Validation // -->
+        <div id="val_eventtype" name="val_eventtype" class="w3-row w3-container w3-yellow w3-display-container"
+          style="display: none">
+          <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
+              class="fas fa-times"></i></span>
+          <p>You must select an event type!</p>
+        </div>
 
-      <input type="radio" id="eventtype8" name="entry.2118181637" class="w3-radio" value="Wedding"
-        onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='none'">
-      <label for="eventtype8">Wedding</label><br />
+        <!-- // Event Type // -->
+        <div id="input_eventtype" name="input_eventtype" class="w3-row w3-container">
+          <label class="w3-large"><b>Event Type <span class="w3-text-red">*</span></b></label>
+          <br />
+          <input type="radio" id="eventtype1" name="entry.2118181637" class="w3-radio" value="Company Event"
+            onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='none'">
+          <label for="eventtype1">Company Event</label><br />
 
-      <input type="radio" id="eventtype9" name="entry.2118181637" class="w3-radio" value="Other"
-        onclick="document.getElementById('div_eventtypeother').style.display='block'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='block'">
-      <label for="eventtype9">Other</label><br />
-    </div>
-    <br />
+          <input type="radio" id="eventtype2" name="entry.2118181637" class="w3-radio" value="Festival"
+            onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='block'">
+          <label for="eventtype2">Festival</label><br />
 
-    <!-- // School Name Validation // -->
-    <div id="val_schoolname" name="val_schoolname" class="w3-row w3-container w3-yellow w3-display-container"
-      style="display: none">
-      <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
-          class="fas fa-times"></i></span>
-      <p>Due to your selected event type, you are required to provide us with the name of your school.</p>
-    </div>
+          <input type="radio" id="eventtype3" name="entry.2118181637" class="w3-radio" value="K-12 Education"
+            onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='block'; document.getElementById('input_public').style.display='none'">
+          <label for="eventtype3">K-12 Education</label><br />
 
-    <!-- // School Name // -->
-    <div id="input_eventtypeschool" name="input_eventtypeschool" class="w3-row w3-container" style="display: none"
-      class="w3-animate-bottom">
-      <label for="schoolname" class="w3-large"><i class='fas fa-school'></i> <b>Please provide the name of the
-          school.</b> <span class="w3-text-red">*</span></label>
-      <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="text" id="schoolname"
-        name="entry.1779666222" />
-    </div>
+          <input type="radio" id="eventtype4" name="entry.2118181637" class="w3-radio" value="Private Event"
+            onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='none'">
+          <label for="eventtype4">Private Event</label><br />
 
-    <!-- // Other Event Type Validation // -->
-    <div id="val_eventtypeother" name="val_eventtypeother" class="w3-row w3-container w3-yellow w3-display-container"
-      style="display: none">
-      <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
-          class="fas fa-times"></i></span>
-      <p>You selected the "Other" event type but did not provide any additional details!</p>
-    </div>
+          <input type="radio" id="eventtype5" name="entry.2118181637" class="w3-radio" value="Store Opening"
+            onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='none'">
+          <label for="eventtype5">Store Opening</label><br />
 
-    <!-- // Other Event Type // -->
-    <div id="input_eventtypeother" name="input_eventtypeother" class="w3-row w3-container" style="display: none"
-      class="w3-animate-bottom">
-      <label for="eventtype_other" class="w3-large"><b>You selected "other." Please explain:</b></label>
-      <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="text"
-        id="entry.1792652955" name="eventtype_other" />
-    </div>
+          <input type="radio" id="eventtype6" name="entry.2118181637" class="w3-radio" value="Store Event"
+            onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='none'">
+          <label for="eventtype6">Store Event</label><br />
 
-    <!-- // Public Validation // -->
-    <div id="val_public" name="val_public" class="w3-row w3-container w3-yellow w3-display-container"
-      style="display: none">
-      <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
-          class="fas fa-times"></i></span>
-      <p>Your event type may or may not be open to the public. Please let us know which it is!</p>
-    </div>
+          <input type="radio" id="eventtype7" name="entry.2118181637" class="w3-radio"
+            value="Student Organization Event"
+            onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='block'; document.getElementById('input_public').style.display='block'">
+          <label for="eventtype7">Student Organization Event</label><br />
 
-    <!-- // Public // -->
-    <div id="input_public" name="input_public" class="w3-row w3-container" style="display: none"
-      class="w3-animate-bottom">
-      <label class="w3-large"><i class='fas fa-users'></i> <b>Is your event open to the public? <span
-            class="w3-text-red">*</span></b></label>
-      <br />
-      <input class="w3-radio" type="radio" id="public1" name="entry.117832584" value="Yes"
-        onclick="document.getElementById('div_entryfee').style.display='block'">
-      <label for="public1">Yes</label><br />
-      <input class="w3-radio" type="radio" id="public2" name="entry.117832584" value="No"
-        onclick="document.getElementById('div_entryfee').style.display='none'">
-      <label for="public2">No</label><br />
-      <input class="w3-radio" type="radio" id="public3" name="entry.117832584" value="Unknown"
-        onclick="document.getElementById('div_entryfee').style.display='block'">
-      <label for="public3">I don't know</label><br />
-    </div>
+          <input type="radio" id="eventtype8" name="entry.2118181637" class="w3-radio" value="Wedding"
+            onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='none'">
+          <label for="eventtype8">Wedding</label><br />
 
-    <!-- // Entry Fee Validation // -->
-    <div id="val_entryfee" name="val_entryfee" class="w3-row w3-container w3-yellow w3-display-container"
-      style="display: none">
-      <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
-          class="fas fa-times"></i></span>
-      <p>You have indicated that your performance is open to the public. Please indicate whether attendees must pay to
-        be admitted.</p>
-    </div>
+          <input type="radio" id="eventtype9" name="entry.2118181637" class="w3-radio" value="Other"
+            onclick="document.getElementById('div_eventtypeother').style.display='block'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='block'">
+          <label for="eventtype9">Other</label><br />
+        </div>
+        <br />
 
-    <!-- // Entry Fee // -->
-    <div id="input_entryfee" name="input_entryfee" class="w3-row w3-container" style="display: none"
-      class="w3-animate-bottom">
-      <label class="w3-large"><i class='fas fa-hand-holding-usd'></i> <b>Are event attendees required to purchase
-          tickets to the event? <span class="w3-text-red">*</span></b></label>
-      <br />
-      <input class="w3-radio" type="radio" id="entryfee1" name="entry.1996365247" value="Yes">
-      <label for="entryfee1">Yes</label><br />
-      <input class="w3-radio" type="radio" id="entryfee2" name="entry.1996365247" value="No">
-      <label for="entryfee2">No</label><br />
-      <input class="w3-radio" type="radio" id="entryfee3" name="entry.1996365247" value="Unknown">
-      <label for="entryfee3">I don't know</label><br />
-      <br />
-    </div>
+        <!-- // School Name Validation // -->
+        <div id="val_schoolname" name="val_schoolname" class="w3-row w3-container w3-yellow w3-display-container"
+          style="display: none">
+          <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
+              class="fas fa-times"></i></span>
+          <p>Due to your selected event type, you are required to provide us with the name of your school.</p>
+        </div>
 
-    <!-- // Location // -->
-    <div id="input_entryfee" name="input_entryfee" class="w3-row w3-container">
-      <label for="location" class="w3-large"><i class='fas fa-map-marker-alt'></i> <b>Performance Location</b></label>
-      <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="text" id="location"
-        name="entry.361083750" placeholder="123 Main St, Austin, TX 78701" />
-    </div>
+        <!-- // School Name // -->
+        <div id="input_eventtypeschool" name="input_eventtypeschool" class="w3-row w3-container" style="display: none"
+          class="w3-animate-bottom">
+          <label for="schoolname" class="w3-large"><i class='fas fa-school'></i> <b>Please provide the name of the
+              school.</b> <span class="w3-text-red">*</span></label>
+          <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="text"
+            id="schoolname" name="entry.1779666222" />
+        </div>
 
-    <!-- // Specific Date and Time? Validation // -->
-    <div id="val_datetime_specific" name="val_datetime_specific"
-      class="w3-row w3-container w3-yellow w3-display-container" style="display: none">
-      <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
-          class="fas fa-times"></i></span>
-      <p>You have selected a specific date and time. Please provide us with the specific date and time.</p>
-    </div>
+        <!-- // Other Event Type Validation // -->
+        <div id="val_eventtypeother" name="val_eventtypeother"
+          class="w3-row w3-container w3-yellow w3-display-container" style="display: none">
+          <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
+              class="fas fa-times"></i></span>
+          <p>You selected the "Other" event type but did not provide any additional details!</p>
+        </div>
 
-    <!-- // Nonspecific Date and Time? Validation // -->
-    <div id="val_datetime_nonspecific" name="val_datetime_nonspecific"
-      class="w3-row w3-container w3-yellow w3-display-container" style="display: none">
-      <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
-          class="fas fa-times"></i></span>
-      <p>You have selected a non-specific date and time. Please provide us with additional details.</p>
-    </div>
+        <!-- // Other Event Type // -->
+        <div id="input_eventtypeother" name="input_eventtypeother" class="w3-row w3-container" style="display: none"
+          class="w3-animate-bottom">
+          <label for="eventtype_other" class="w3-large"><b>You selected "other." Please explain:</b></label>
+          <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="text"
+            id="entry.1792652955" name="eventtype_other" />
+        </div>
 
-    <!-- // Specific Date and Time? // -->
-    <div id="input_specificdatetime" name="input_specificdatetime" class="w3-row w3-container">
-      <label class="w3-large"><b>Do you have an exact date and time for our performance to start? <span
-            class="w3-text-red">*</span></b><br />Be sure to check our <a
-          href="https://sites.google.com/tddt.org/tddt/calendar" target="_blank">Performance Calendar</a> to ensure that
-        there are no existing time conflicts.</label>
-      <br />
-      <input class="w3-radio" type="radio" id="knownstart1" name="entry.2006112932"
-        onclick="document.getElementById('input_datetimespecific').style.display='block'; document.getElementById('input_datetimenonspecific').style.display='none'">
-      <label for="knownstart1">Yes</label><br />
-      <input class="w3-radio" type="radio" id="knownstart2" name="entry.2006112932"
-        onclick="document.getElementById('input_datetimespecific').style.display='none'; document.getElementById('input_datetimenonspecific').style.display='block'">
-      <label for="knownstart2">No</label><br />
-      <br />
-    </div>
+        <!-- // Public Validation // -->
+        <div id="val_public" name="val_public" class="w3-row w3-container w3-yellow w3-display-container"
+          style="display: none">
+          <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
+              class="fas fa-times"></i></span>
+          <p>Your event type may or may not be open to the public. Please let us know which it is!</p>
+        </div>
 
-    <!-- // Date-Time Information // -->
-    <div id="input_datetimespecific" name="input_datetimespecific" class="w3-row w3-container" style="display: none"
-      class="w3-animate-bottom">
-      <!-- // Date // -->
-      <label for="date" class="w3-large"><i class='fas fa-calendar-alt'></i> <b>Event Date <span
-            class="w3-text-red">*</span></b></label>
-      <input type="date" id="date" name="entry.833271710"
-        class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" />
+        <!-- // Public // -->
+        <div id="input_public" name="input_public" class="w3-row w3-container" style="display: none"
+          class="w3-animate-bottom">
+          <label class="w3-large"><i class='fas fa-users'></i> <b>Is your event open to the public? <span
+                class="w3-text-red">*</span></b></label>
+          <br />
+          <input class="w3-radio" type="radio" id="public1" name="entry.117832584" value="Yes"
+            onclick="document.getElementById('div_entryfee').style.display='block'">
+          <label for="public1">Yes</label><br />
+          <input class="w3-radio" type="radio" id="public2" name="entry.117832584" value="No"
+            onclick="document.getElementById('div_entryfee').style.display='none'">
+          <label for="public2">No</label><br />
+          <input class="w3-radio" type="radio" id="public3" name="entry.117832584" value="Unknown"
+            onclick="document.getElementById('div_entryfee').style.display='block'">
+          <label for="public3">I don't know</label><br />
+        </div>
 
-      <!-- // Time // -->
-      <label for="time" class="w3-large"><i class='fas fa-clock'></i> <b>What time you would like our performance to
-          start? <span class="w3-text-red">*</span></b></label>
-      <input type="time" id="time" name="entry.765423839"
-        class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" />
-    </div>
+        <!-- // Entry Fee Validation // -->
+        <div id="val_entryfee" name="val_entryfee" class="w3-row w3-container w3-yellow w3-display-container"
+          style="display: none">
+          <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
+              class="fas fa-times"></i></span>
+          <p>You have indicated that your performance is open to the public. Please indicate whether attendees must pay
+            to
+            be admitted.</p>
+        </div>
+
+        <!-- // Entry Fee // -->
+        <div id="input_entryfee" name="input_entryfee" class="w3-row w3-container" style="display: none"
+          class="w3-animate-bottom">
+          <label class="w3-large"><i class='fas fa-hand-holding-usd'></i> <b>Are event attendees required to purchase
+              tickets to the event? <span class="w3-text-red">*</span></b></label>
+          <br />
+          <input class="w3-radio" type="radio" id="entryfee1" name="entry.1996365247" value="Yes">
+          <label for="entryfee1">Yes</label><br />
+          <input class="w3-radio" type="radio" id="entryfee2" name="entry.1996365247" value="No">
+          <label for="entryfee2">No</label><br />
+          <input class="w3-radio" type="radio" id="entryfee3" name="entry.1996365247" value="Unknown">
+          <label for="entryfee3">I don't know</label><br />
+          <br />
+        </div>
+
+        <!-- // Location // -->
+        <div id="input_entryfee" name="input_entryfee" class="w3-row w3-container">
+          <label for="location" class="w3-large"><i class='fas fa-map-marker-alt'></i> <b>Performance
+              Location</b></label>
+          <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="text"
+            id="location" name="entry.361083750" placeholder="123 Main St, Austin, TX 78701" />
+        </div>
+
+        <!-- // Specific Date and Time? Validation // -->
+        <div id="val_datetime_specific" name="val_datetime_specific"
+          class="w3-row w3-container w3-yellow w3-display-container" style="display: none">
+          <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
+              class="fas fa-times"></i></span>
+          <p>You have selected a specific date and time. Please provide us with the specific date and time.</p>
+        </div>
+
+        <!-- // Nonspecific Date and Time? Validation // -->
+        <div id="val_datetime_nonspecific" name="val_datetime_nonspecific"
+          class="w3-row w3-container w3-yellow w3-display-container" style="display: none">
+          <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
+              class="fas fa-times"></i></span>
+          <p>You have selected a non-specific date and time. Please provide us with additional details.</p>
+        </div>
+
+        <!-- // Specific Date and Time? // -->
+        <div id="input_specificdatetime" name="input_specificdatetime" class="w3-row w3-container">
+          <label class="w3-large"><b>Do you have an exact date and time for our performance to start? <span
+                class="w3-text-red">*</span></b><br />Be sure to check our <a
+              href="https://sites.google.com/tddt.org/tddt/calendar" target="_blank">Performance Calendar</a> to ensure
+            that
+            there are no existing time conflicts.</label>
+          <br />
+          <input class="w3-radio" type="radio" id="knownstart1" name="entry.2006112932"
+            onclick="document.getElementById('input_datetimespecific').style.display='block'; document.getElementById('input_datetimenonspecific').style.display='none'">
+          <label for="knownstart1">Yes</label><br />
+          <input class="w3-radio" type="radio" id="knownstart2" name="entry.2006112932"
+            onclick="document.getElementById('input_datetimespecific').style.display='none'; document.getElementById('input_datetimenonspecific').style.display='block'">
+          <label for="knownstart2">No</label><br />
+          <br />
+        </div>
+
+        <!-- // Date-Time Information // -->
+        <div id="input_datetimespecific" name="input_datetimespecific" class="w3-row w3-container" style="display: none"
+          class="w3-animate-bottom">
+          <!-- // Date // -->
+          <label for="date" class="w3-large"><i class='fas fa-calendar-alt'></i> <b>Event Date <span
+                class="w3-text-red">*</span></b></label>
+          <input type="date" id="date" name="entry.833271710"
+            class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" />
+
+          <!-- // Time // -->
+          <label for="time" class="w3-large"><i class='fas fa-clock'></i> <b>What time you would like our performance to
+              start? <span class="w3-text-red">*</span></b></label>
+          <input type="time" id="time" name="entry.765423839"
+            class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" />
+        </div>
     </div>
 
     <!-- // Non-Specific Date-Time Information // -->
@@ -519,7 +524,8 @@
       <label for="readfaq" class="w3-large"><b>Please confirm that you have read our <a
             href="https://www.tddt.org/request" target="_blank">Performance Request FAQs</a>. <span
             class="w3-text-red">*</span></label><br />
-      <input type="checkbox" id="readfaq" name="entry.974614610" class="w3-check w3-hover-border-red" value="true" /> I have
+      <input type="checkbox" id="readfaq" name="entry.974614610" class="w3-check w3-hover-border-red" value="true" /> I
+      have
       read the Performance Request FAQs.<br />
     </div>
 
@@ -531,7 +537,8 @@
     <br />
 
     <!-- // End Form // -->
-  </form>
+    </form>
+
 
   <!-- // Modals -->
   <div id="help_staging" class="w3-modal w3-animate-opacity">
