@@ -155,8 +155,8 @@
   <div class="w3-container w3-auto">
     <header class="w3-row w3-container">
       <h1 class="w3-xlarge">Request a Performance</h1>
-      <p class="w3-large">Please submit your request with as much lead time as possible. Entries with a <span
-          class="w3-text-red">*</span> are required.</p>
+      <p class="w3-large">Please submit your request with as much lead time as possible. Entries with a <b><span
+          class="w3-text-red">*</span></b> are required.</p>
     </header>
 
     <!-- // Loading // -->
@@ -173,7 +173,7 @@
     <!-- // Begin Form // -->
     <form id="request" name="request"
       action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeOUtlovVu4hvptnr_Q3xzUQ4f3MyOdVSHY_-3ij5EzH5fD6Q/formResponse"
-      onsubmit="return handleFormSubmit()" method="post" target="_top">
+      onsubmit="return handleFormSubmit()" method="post" target="_self">
 
       <!-- // Name Validation // -->
       <div id="val_name" name="val_name" class="w3-row w3-container w3-yellow w3-display-container"
@@ -281,7 +281,7 @@
         <label for="eventtype8">Wedding</label><br />
 
         <input type="radio" id="eventtype9" name="entry.2118181637" class="w3-radio" value="Other"
-          onclick="document.getElementById('div_eventtypeother').style.display='block'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='block'">
+          onclick="document.getElementById('input_eventtypeother').style.display='block'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='block'">
         <label for="eventtype9">Other</label><br />
         <br />
       </div>
@@ -298,7 +298,7 @@
       <div id="input_eventtypeschool" name="input_eventtypeschool" class="w3-row w3-container w3-animate-bottom"
         style="display: none">
         <label for="schoolname" class="w3-large"><i class="fas fa-school"></i> <b>Please provide the name of the
-            school.</b> <span class="w3-text-red">*</span></label>
+            school. <span class="w3-text-red">*</span></b> </label>
         <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="text"
           id="schoolname" name="entry.1779666222" />
       </div>
@@ -314,7 +314,8 @@
       <!-- // Other Event Type // -->
       <div id="input_eventtypeother" name="input_eventtypeother" class="w3-row w3-container w3-animate-bottom"
         style="display: none">
-        <label for="eventtype_other" class="w3-large"><b>You selected "other." Please explain:</b></label>
+        <label for="eventtype_other" class="w3-large"><b>You selected "other." Please explain: <span
+          class="w3-text-red">*</span></b></label>
         <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="text"
           id="entry.1792652955" name="eventtype_other" />
       </div>
@@ -473,34 +474,34 @@
       <div id="input_referral" name="input_referral" class="w3-row w3-container">
         <label class="w3-large"><i class="fas fa-comments"></i> <b>Where did you hear about us?</b></label><br />
         <input type="radio" id="referral1" name="entry.1502696157" class="w3-radio" value="Facebook"
-          onclick="document.getElementById('div_referral').style.display='none'">
+          onclick="document.getElementById('input_referral_other').style.display='none'">
         <label for="referral1">Facebook</label><br />
         <input type="radio" id="referral2" name="entry.1502696157" class="w3-radio" value="Flyer"
-          onclick="document.getElementById('div_referral').style.display='none'">
+          onclick="document.getElementById('input_referral_other').style.display='none'">
         <label for="referral2">Flyer</label><br />
         <input type="radio" id="referral3" name="entry.1502696157" class="w3-radio" value="Google"
-          onclick="document.getElementById('div_referral').style.display='none'">
+          onclick="document.getElementById('input_referral_other').style.display='none'">
         <label for="referral3">Google</label><br />
         <input type="radio" id="referral4" name="entry.1502696157" class="w3-radio" value="Performance"
-          onclick="document.getElementById('div_referral').style.display='none'">
+          onclick="document.getElementById('input_referral_other').style.display='none'">
         <label for="referral4">I saw you perform (in person)</label><br />
         <input type="radio" id="referral5" name="entry.1502696157" class="w3-radio" value="Instagram"
-          onclick="document.getElementById('div_referral').style.display='none'">
+          onclick="document.getElementById('input_referral_other').style.display='none'">
         <label for="referral5">Instagram</label><br />
         <input type="radio" id="referral6" name="entry.1502696157" class="w3-radio" value="Twitter"
-          onclick="document.getElementById('div_referral').style.display='none'">
+          onclick="document.getElementById('input_referral_other').style.display='none'">
         <label for="referral6">Twitter</label><br />
         <input type="radio" id="referral7" name="entry.1502696157" class="w3-radio" value="USDLDF"
-          onclick="document.getElementById('div_referral').style.display='none'">
+          onclick="document.getElementById('input_referral_other').style.display='none'">
         <label for="referral7">USDLDF</label><br />
         <input type="radio" id="referral8" name="entry.1502696157" class="w3-radio" value="Word of Mouth"
-          onclick="document.getElementById('div_referral').style.display='none'">
+          onclick="document.getElementById('input_referral_other').style.display='none'">
         <label for="referral8">Word of Mouth</label><br />
         <input type="radio" id="referral9" name="entry.1502696157" class="w3-radio" value="YouTube"
-          onclick="document.getElementById('div_referral').style.display='none'">
+          onclick="document.getElementById('input_referral_other').style.display='none'">
         <label for="referral9">YouTube</label><br />
         <input type="radio" id="referral10" name="entry.1502696157" class="w3-radio" value="Other"
-          onclick="document.getElementById('div_referral').style.display='block'">
+          onclick="document.getElementById('input_referral_other').style.display='block'">
         <label for="referral10">Other</label><br />
         <br />
       </div>
