@@ -143,9 +143,7 @@
       // Validate reading of FAQ
       let valReadfaq = document.forms["request"]["readfaq"].value;
       console.log(`Received valReadfaq: ` + valReadfaq);
-      let checkedReadfaq = document.forms["request"]["readfaq"].checked;
-      console.log(`Received checkedReadfaq: ` + checkedReadfaq);
-      if (!checkedReadfaq || !valReadfaq) {
+      if (!valReadfaq) {
         document.getElementById('val_readfaq').style.display = "block";
         document.getElementById('val_readfaq').scrollIntoView();
         return false;
