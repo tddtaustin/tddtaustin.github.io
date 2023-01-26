@@ -19,23 +19,12 @@
   <script src="https://kit.fontawesome.com/a273e5c67b.js" crossorigin="anonymous"></script>
   <script>
 
-    function preventFormSubmit() {
-      console.log('Running preventFormSubmit()');
-      var forms = document.querySelectorAll('form');
-      for (var i = 0; i < forms.length; i++) {
-        forms[i].addEventListener('submit', function(event) {
-          event.preventDefault();
-        });
-      }
-    }
-
-    window.addEventListener('load', preventFormSubmit);
-
     function validateForm() {
       console.log('Running validateForm()');
 
       // Validate name
       let valName = document.forms["request"]["name"].value;
+      console.log(`Checking name: ` + valName);
       if (!valName) {
         document.getElementById('val_name').style.display = "block";
         document.getElementById('val_name').scrollIntoView();
@@ -44,7 +33,9 @@
 
       // Validate email address and phone number
       let valEmail = document.forms["request"]["email"].value;
+      console.log(`Checking email: ` + valEmail);
       let valPhone = document.forms["request"]["phone"].value;
+      console.log(`Checking phone: ` + valPhone);
       if (!valEmail && !valPhone) {
         document.getElementById('val_email_phone').style.display = "block";
         document.getElementById('val_email_phone').scrollIntoView();
@@ -53,6 +44,7 @@
 
       // Validate event name
       let valDescription = document.forms["request"]["description"].value;
+      console.log(`Checking event name: ` + valDescription);
       if (!valDescription) {
         document.getElementById('val_description').style.display = "block";
         document.getElementById('val_description').scrollIntoView();
@@ -61,6 +53,7 @@
 
       // Validate event type
       let valEventtype = document.forms["request"]["eventtype"].value;
+      console.log(`Checking event type: ` + valEventtype);
       if (!valEventtype) {
         document.getElementById('val_eventtype').style.display = "block";
         document.getElementById('val_eventtype').scrollIntoView();
@@ -69,6 +62,7 @@
 
       // Validate school name
       let valSchoolname = document.forms["request"]["schoolname"].value;
+      console.log(`Checking school name: ` + valSchoolname);
       if ((valEventtype == "K-12 Education" || valEventtype == "Student Organization Event") && !valSchoolname) {
         document.getElementById('val_schoolname').style.display = "block";
         document.getElementById('val_schoolname').scrollIntoView();
@@ -77,6 +71,7 @@
 
       // Validate event type
       let valEventtype_other = document.forms["request"]["eventtype_other"].value;
+      console.log(`Checking event type other: ` + valEventtype_other);
       if (valEventtype == "Other" && !valEventtype_other) {
         document.getElementById('val_eventtype_other').style.display = "block";
         document.getElementById('val_eventtype_other').scrollIntoView();
@@ -85,6 +80,7 @@
 
       // Validate public switch
       let valPublic = document.forms["request"]["public"].value;
+      console.log(`Checking public: ` + valPublic);
       if ((valEventtype == "Festival" || valEventtype == "Student Organization Event" || valEventtype == "Other") && !
         valEventtype_other) {
         document.getElementById('val_eventtype_other').style.display = "block";
@@ -94,6 +90,7 @@
 
       // Validate entry fee switch
       let valEntryfee = document.forms["request"]["entryfee"].value;
+      console.log(`Checking entry fee: ` + valEntryfee);
       if (valPublic == "Yes" && !valEntryfee) {
         document.getElementById('val_entryfee').style.display = "block";
         document.getElementById('val_entryfee').scrollIntoView();
@@ -101,9 +98,11 @@
       }
 
       let valLocation = document.forms["request"]["location"].value;
+      console.log(`Received location: ` + valLocation);
 
       // Validate known date and time
       let valKnownstart = document.forms["request"]["knownstart"].value;
+      console.log(`Checking known start: ` + valKnownstart);
       if (!valKnownstart) {
         document.getElementById('val_datetime').style.display = "block";
         document.getElementById('val_datetime').scrollIntoView();
@@ -112,7 +111,9 @@
 
       // Validate datea nd time
       let valDate = document.forms["request"]["date"].value;
+      console.log(`Checking date: ` + valDate);
       let valTime = document.forms["request"]["time"].value;
+      console.log(`Checking time: ` + valTime);
       if (valKnownstart == "Yes" && (!valDate || !valTime)) {
         document.getElementById('val_datetime_specific').style.display = "block";
         document.getElementById('val_datetime_specific').scrollIntoView();
@@ -121,6 +122,7 @@
 
       // Validate arbitrary time information
       let valTiming = document.forms["request"]["timing"].value;
+      console.log(`Checking timing: ` + valTiming);
       if (valKnownstart == "No" && !valTiming) {
         document.getElementById('val_datetime_nonspecific').style.display = "block";
         document.getElementById('val_datetime_nonspecific').scrollIntoView();
@@ -128,14 +130,21 @@
       }
 
       let valParkingspots = document.forms["request"]["parkingspots"].value;
+      console.log(`Received parking spots : ` + valParkingspots);
       let valStagingarea = document.forms["request"]["stagingarea"].value;
+      console.log(`Received staging area: ` + valStagingarea);
       let valOtherinfo = document.forms["request"]["otherinfo"].value;
+      console.log(`Received other info: ` + valOtherinfo);
       let valReferral = document.forms["request"]["referral"].value;
+      console.log(`Received referrals: ` + valReferral);
       let valReferral_other = document.forms["request"]["referral_other"].value;
+      console.log(`Received referral other: ` + valReferral_other);
 
       // Validate reading of FAQ
       let valReadfaq = document.forms["request"]["readfaq"].value;
+      console.log(`Received valReadfaq: ` + valReadfaq);
       let checkedReadfaq = document.forms["request"]["readfaq"].checked;
+      console.log(`Received checkedReadfaq: ` + checkedReadfaq);
       if (!checkedReadfaq || !valReadfaq) {
         document.getElementById('val_readfaq').style.display = "block";
         document.getElementById('val_readfaq').scrollIntoView();
@@ -151,8 +160,8 @@
      */
     function handleFormSubmit() {
       console.log('Running handleFormSubmit()');
-      // if (validateForm())
-      if (true) {
+      if (validateForm()) {
+        console.log(`validation has passed`);
         document.getElementById('request').style.display = "none";
         document.getElementById('loading').style.display = "block";
         document.getElementById('request').submit();
@@ -187,7 +196,7 @@
     <!-- // Begin Form // -->
     <form id="request" name="request"
       action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeOUtlovVu4hvptnr_Q3xzUQ4f3MyOdVSHY_-3ij5EzH5fD6Q/formResponse"
-      onsubmit="return handleFormSubmit()" method="post" target="_self">
+      onsubmit="return handleFormSubmit();" method="post" target="_self">
 
       <!-- // Name Validation // -->
       <div id="val_name" name="val_name" class="w3-row w3-container w3-yellow w3-display-container"
