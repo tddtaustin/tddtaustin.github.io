@@ -18,6 +18,19 @@
   </style>
   <script src="https://kit.fontawesome.com/a273e5c67b.js" crossorigin="anonymous"></script>
   <script>
+
+    function preventFormSubmit() {
+      console.log('Running preventFormSubmit()');
+      var forms = document.querySelectorAll('form');
+      for (var i = 0; i < forms.length; i++) {
+        forms[i].addEventListener('submit', function(event) {
+          event.preventDefault();
+        });
+      }
+    }
+
+    window.addEventListener('load', preventFormSubmit);
+
     function validateForm() {
       console.log('Running validateForm()');
 
@@ -121,8 +134,9 @@
       let valReferral_other = document.forms["request"]["referral_other"].value;
 
       // Validate reading of FAQ
-      let valReadfaq = document.forms["request"]["readfaq"].checked;
-      if (!valReadfaq) {
+      let valReadfaq = document.forms["request"]["readfaq"].value;
+      let checkedReadfaq = document.forms["request"]["readfaq"].checked;
+      if (!checkedReadfaq || !valReadfaq) {
         document.getElementById('val_readfaq').style.display = "block";
         document.getElementById('val_readfaq').scrollIntoView();
         return false;
@@ -400,10 +414,10 @@
           <p>Be sure to check our <a href="https://sites.google.com/tddt.org/tddt/calendar" target="_blank">Performance
               Calendar</a> to ensure that there are no existing time conflicts.</p>
         </label>
-        <input class="w3-radio" type="radio" id="knownstart1" name="entry.2006112932"
+        <input class="w3-radio" type="radio" id="knownstart1" name="entry.2006112932" value="Yes"
           onclick="document.getElementById('input_datetimespecific').style.display='block'; document.getElementById('input_datetimenonspecific').style.display='none'">
         <label for="knownstart1">Yes</label><br />
-        <input class="w3-radio" type="radio" id="knownstart2" name="entry.2006112932"
+        <input class="w3-radio" type="radio" id="knownstart2" name="entry.2006112932" value="No"
           onclick="document.getElementById('input_datetimespecific').style.display='none'; document.getElementById('input_datetimenonspecific').style.display='block'">
         <label for="knownstart2">No</label><br />
         <br />
@@ -430,8 +444,7 @@
       <div id="input_datetimenonspecific" name="input_datetimenonspecific" class="w3-row w3-container w3-animate-bottom"
         style="display: none">
         <label for="timing" class="w3-large"><i class="fas fa-calendar-alt"></i> <b>Please share what information you
-            can.
-            <span class="w3-text-red">*</span></b></label>
+            can. <span class="w3-text-red">*</span></b></label>
         <input type="text" id="timing" name="entry.1923996314"
           class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" />
       </div>
@@ -528,9 +541,7 @@
               href="https://www.tddt.org/request" target="_blank">Performance Request FAQs</a>. <span
               class="w3-text-red">*</span></b></label><br />
         <input type="checkbox" id="readfaq" name="entry.974614610" class="w3-check w3-hover-border-red" value="true" />
-        I
-        have
-        read the Performance Request FAQs.<br />
+        I have read the Performance Request FAQs.<br />
       </div>
 
       <div class="w3-row w3-container w3-center w3-margin-top w3-margin-bottom">
