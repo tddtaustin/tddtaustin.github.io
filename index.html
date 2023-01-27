@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <base target="_top">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -43,8 +44,7 @@
         document.getElementById('loading').style.display = "none";
         document.getElementById('output').style.display = "block";
         return true;
-      }
-      else {
+      } else {
         return false;
       }
     }
@@ -52,7 +52,7 @@
     function preventFormSubmit() {
       var forms = document.querySelectorAll('form');
       for (var i = 0; i < forms.length; i++) {
-        forms[i].addEventListener('submit', function(event) {
+        forms[i].addEventListener('submit', function (event) {
           event.preventDefault();
         });
       }
@@ -61,12 +61,13 @@
   </script>
   <title>TDDT Performance Request</title>
 </head>
+
 <body>
   <div class="w3-container w3-auto">
     <header class="w3-row w3-container">
       <h1 class="w3-xlarge">Request a Performance</h1>
       <p class="w3-large">Please submit your request with as much lead time as possible. Entries with a <b><span
-          class="w3-text-red">*</span></b> are required.</p>
+            class="w3-text-red">*</span></b> are required.</p>
     </header>
 
     <!-- // Loading // -->
@@ -224,8 +225,7 @@
       <!-- // Other Event Type // -->
       <div id="input_eventtypeother" name="input_eventtypeother" class="w3-row w3-container w3-animate-bottom"
         style="display: none">
-        <label class="w3-large"><b>You selected "other." Please explain: <span
-          class="w3-text-red">*</span></b></label>
+        <label class="w3-large"><b>You selected "other." Please explain: <span class="w3-text-red">*</span></b></label>
         <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="text"
           id="entry.1792652955" name="eventtype_other">
       </div>
@@ -288,11 +288,12 @@
       </div>
 
       <!-- // Do they have a specific date and time? // -->
-      <div id="val_datetime_known" name="val_datetime_known"
-        class="w3-row w3-container w3-yellow w3-display-container" style="display: none">
+      <div id="val_datetime_known" name="val_datetime_known" class="w3-row w3-container w3-yellow w3-display-container"
+        style="display: none">
         <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
             class="fas fa-times"></i></span>
-        <p>Please indicate if you have a specific date and time. If you do not have a specific date and time, or if you have multiple possibilities, please select "No."</p>
+        <p>Please indicate if you have a specific date and time. If you do not have a specific date and time, or if you
+          have multiple possibilities, please select "No."</p>
       </div>
 
       <!-- // Specific Date and Time? Validation // -->
@@ -315,8 +316,8 @@
       <div id="input_specificdatetime" name="input_specificdatetime" class="w3-row w3-container">
         <label class="w3-large"><b>Do you have an exact date and time for our performance to start? <span
               class="w3-text-red">*</span></b></label><br>
-          <p>Be sure to check our <a href="https://sites.google.com/tddt.org/tddt/calendar" target="_blank">Performance
-              Calendar</a> to ensure that there are no existing time conflicts.</p>
+        <p>Be sure to check our <a href="https://sites.google.com/tddt.org/tddt/calendar" target="_blank">Performance
+            Calendar</a> to ensure that there are no existing time conflicts.</p>
         <input class="w3-radio" type="radio" id="knownstart" name="entry.2006112932" value="Yes"
           onclick="document.getElementById('input_datetimespecific').style.display='block'; document.getElementById('input_datetimenonspecific').style.display='none'">
         <label>Yes</label><br>
