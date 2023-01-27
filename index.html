@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <base target="_top">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -17,147 +16,25 @@
     }
   </style>
   <script src="https://kit.fontawesome.com/a273e5c67b.js" crossorigin="anonymous"></script>
-  <script>
-
-    function validateForm() {
-      console.log('Running validateForm()');
-
-      // Validate name
-      let valName = document.forms["request"]["name"].value;
-      console.log(`Checking name: ` + valName);
-      if (!valName) {
-        document.getElementById('val_name').style.display = "block";
-        document.getElementById('val_name').scrollIntoView();
-        return false;
-      }
-
-      // Validate email address and phone number
-      let valEmail = document.forms["request"]["email"].value;
-      console.log(`Checking email: ` + valEmail);
-      let valPhone = document.forms["request"]["phone"].value;
-      console.log(`Checking phone: ` + valPhone);
-      if (!valEmail && !valPhone) {
-        document.getElementById('val_email_phone').style.display = "block";
-        document.getElementById('val_email_phone').scrollIntoView();
-        return false;
-      }
-
-      // Validate event name
-      let valDescription = document.forms["request"]["description"].value;
-      console.log(`Checking event name: ` + valDescription);
-      if (!valDescription) {
-        document.getElementById('val_description').style.display = "block";
-        document.getElementById('val_description').scrollIntoView();
-        return false;
-      }
-
-      // Validate event type
-      let valEventtype = document.forms["request"]["eventtype"].value;
-      console.log(`Checking event type: ` + valEventtype);
-      if (!valEventtype) {
-        document.getElementById('val_eventtype').style.display = "block";
-        document.getElementById('val_eventtype').scrollIntoView();
-        return false;
-      }
-
-      // Validate school name
-      let valSchoolname = document.forms["request"]["schoolname"].value;
-      console.log(`Checking school name: ` + valSchoolname);
-      if ((valEventtype == "K-12 Education" || valEventtype == "Student Organization Event") && !valSchoolname) {
-        document.getElementById('val_schoolname').style.display = "block";
-        document.getElementById('val_schoolname').scrollIntoView();
-        return false;
-      }
-
-      // Validate event type
-      let valEventtype_other = document.forms["request"]["eventtype_other"].value;
-      console.log(`Checking event type other: ` + valEventtype_other);
-      if (valEventtype == "Other" && !valEventtype_other) {
-        document.getElementById('val_eventtype_other').style.display = "block";
-        document.getElementById('val_eventtype_other').scrollIntoView();
-        return false;
-      }
-
-      // Validate public switch
-      let valPublic = document.forms["request"]["public"].value;
-      console.log(`Checking public: ` + valPublic);
-      if ((valEventtype == "Festival" || valEventtype == "Student Organization Event" || valEventtype == "Other") && !
-        valEventtype_other) {
-        document.getElementById('val_eventtype_other').style.display = "block";
-        document.getElementById('val_eventtype_other').scrollIntoView();
-        return false;
-      }
-
-      // Validate entry fee switch
-      let valEntryfee = document.forms["request"]["entryfee"].value;
-      console.log(`Checking entry fee: ` + valEntryfee);
-      if (valPublic == "Yes" && !valEntryfee) {
-        document.getElementById('val_entryfee').style.display = "block";
-        document.getElementById('val_entryfee').scrollIntoView();
-        return false;
-      }
-
-      let valLocation = document.forms["request"]["location"].value;
-      console.log(`Received location: ` + valLocation);
-
-      // Validate known date and time
-      let valKnownstart = document.forms["request"]["knownstart"].value;
-      console.log(`Checking known start: ` + valKnownstart);
-      if (!valKnownstart) {
-        document.getElementById('val_datetime').style.display = "block";
-        document.getElementById('val_datetime').scrollIntoView();
-        return false;
-      }
-
-      // Validate datea nd time
-      let valDate = document.forms["request"]["date"].value;
-      console.log(`Checking date: ` + valDate);
-      let valTime = document.forms["request"]["time"].value;
-      console.log(`Checking time: ` + valTime);
-      if (valKnownstart == "Yes" && (!valDate || !valTime)) {
-        document.getElementById('val_datetime_specific').style.display = "block";
-        document.getElementById('val_datetime_specific').scrollIntoView();
-        return false;
-      }
-
-      // Validate arbitrary time information
-      let valTiming = document.forms["request"]["timing"].value;
-      console.log(`Checking timing: ` + valTiming);
-      if (valKnownstart == "No" && !valTiming) {
-        document.getElementById('val_datetime_nonspecific').style.display = "block";
-        document.getElementById('val_datetime_nonspecific').scrollIntoView();
-        return false;
-      }
-
-      let valParkingspots = document.forms["request"]["parkingspots"].value;
-      console.log(`Received parking spots : ` + valParkingspots);
-      let valStagingarea = document.forms["request"]["stagingarea"].value;
-      console.log(`Received staging area: ` + valStagingarea);
-      let valOtherinfo = document.forms["request"]["otherinfo"].value;
-      console.log(`Received other info: ` + valOtherinfo);
-      let valReferral = document.forms["request"]["referral"].value;
-      console.log(`Received referrals: ` + valReferral);
-      let valReferral_other = document.forms["request"]["referral_other"].value;
-      console.log(`Received referral other: ` + valReferral_other);
-
-      // Validate reading of FAQ
-      let valReadfaq = document.forms["request"]["readfaq"].value;
-      console.log(`Received valReadfaq: ` + valReadfaq);
-      if (!valReadfaq) {
-        document.getElementById('val_readfaq').style.display = "block";
-        document.getElementById('val_readfaq').scrollIntoView();
-        return false;
-      }
+  <script src="validation.js"></script>
+  <script type="text/javascript">
+    function resetValidation() {
+      document.getElementById('val_name').style.display = "none";
+      document.getElementById('val_email_phone').style.display = "none";
+      document.getElementById('val_description').style.display = "none";
+      document.getElementById('val_eventtype').style.display = "none";
+      document.getElementById('val_schoolname').style.display = "none";
+      document.getElementById('val_eventtypeother').style.display = "none";
+      document.getElementById('val_entryfee').style.display = "none";
+      document.getElementById('val_datetime_known').style.display = "none";
+      document.getElementById('val_datetime_specific').style.display = "none";
+      document.getElementById('val_datetime_nonspecific').style.display = "none";
+      document.getElementById('val_readfaq').style.display = "none";
       return true;
     }
 
-    /**
-     * Handle form submission. Google Apps Script requires that you use
-     * a success or failure handler in order to pass values into the
-     * HTML from the gs code.
-     */
     function handleFormSubmit() {
-      console.log('Running handleFormSubmit()');
+      resetValidation();
       if (validateForm()) {
         console.log(`validation has passed`);
         document.getElementById('request').style.display = "none";
@@ -165,13 +42,25 @@
         document.getElementById('request').submit();
         document.getElementById('loading').style.display = "none";
         document.getElementById('output').style.display = "block";
+        return true;
+      }
+      else {
+        return false;
       }
     }
+
+    function preventFormSubmit() {
+      var forms = document.querySelectorAll('form');
+      for (var i = 0; i < forms.length; i++) {
+        forms[i].addEventListener('submit', function(event) {
+          event.preventDefault();
+        });
+      }
+    }
+    window.addEventListener('load', preventFormSubmit);
   </script>
   <title>TDDT Performance Request</title>
 </head>
-
-
 <body>
   <div class="w3-container w3-auto">
     <header class="w3-row w3-container">
@@ -269,41 +158,41 @@
       <div id="input_eventtype" name="input_eventtype" class="w3-row w3-container">
         <label class="w3-large"><b>Event Type <span class="w3-text-red">*</span></b></label>
         <br />
-        <input type="radio" id="eventtype1" name="entry.2118181637" class="w3-radio" value="Company Event"
+        <input type="radio" id="eventtype" name="entry.2118181637" class="w3-radio" value="Company Event"
           onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='none'">
-        <label for="eventtype1">Company Event</label><br />
+        <label>Company Event</label><br />
 
-        <input type="radio" id="eventtype2" name="entry.2118181637" class="w3-radio" value="Festival"
+        <input type="radio" id="eventtype" name="entry.2118181637" class="w3-radio" value="Festival"
           onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='block'">
-        <label for="eventtype2">Festival</label><br />
+        <label>Festival</label><br />
 
-        <input type="radio" id="eventtype3" name="entry.2118181637" class="w3-radio" value="K-12 Education"
+        <input type="radio" id="eventtype" name="entry.2118181637" class="w3-radio" value="K-12 Education"
           onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='block'; document.getElementById('input_public').style.display='none'">
-        <label for="eventtype3">K-12 Education</label><br />
+        <label>K-12 Education</label><br />
 
-        <input type="radio" id="eventtype4" name="entry.2118181637" class="w3-radio" value="Private Event"
+        <input type="radio" id="eventtype" name="entry.2118181637" class="w3-radio" value="Private Event"
           onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='none'">
-        <label for="eventtype4">Private Event</label><br />
+        <label>Private Event</label><br />
 
-        <input type="radio" id="eventtype5" name="entry.2118181637" class="w3-radio" value="Store Opening"
+        <input type="radio" id="eventtype" name="entry.2118181637" class="w3-radio" value="Store Opening"
           onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='none'">
-        <label for="eventtype5">Store Opening</label><br />
+        <label>Store Opening</label><br />
 
-        <input type="radio" id="eventtype6" name="entry.2118181637" class="w3-radio" value="Store Event"
+        <input type="radio" id="eventtype" name="entry.2118181637" class="w3-radio" value="Store Event"
           onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='none'">
-        <label for="eventtype6">Store Event</label><br />
+        <label>Store Event</label><br />
 
-        <input type="radio" id="eventtype7" name="entry.2118181637" class="w3-radio" value="Student Organization Event"
+        <input type="radio" id="eventtype" name="entry.2118181637" class="w3-radio" value="Student Organization Event"
           onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='block'; document.getElementById('input_public').style.display='block'">
-        <label for="eventtype7">Student Organization Event</label><br />
+        <label>Student Organization Event</label><br />
 
-        <input type="radio" id="eventtype8" name="entry.2118181637" class="w3-radio" value="Wedding"
+        <input type="radio" id="eventtype" name="entry.2118181637" class="w3-radio" value="Wedding"
           onclick="document.getElementById('input_eventtypeother').style.display='none'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='none'">
-        <label for="eventtype8">Wedding</label><br />
+        <label>Wedding</label><br />
 
-        <input type="radio" id="eventtype9" name="entry.2118181637" class="w3-radio" value="Other"
+        <input type="radio" id="eventtype" name="entry.2118181637" class="w3-radio" value="Other"
           onclick="document.getElementById('input_eventtypeother').style.display='block'; document.getElementById('input_eventtypeschool').style.display='none'; document.getElementById('input_public').style.display='block'">
-        <label for="eventtype9">Other</label><br />
+        <label>Other</label><br />
         <br />
       </div>
 
@@ -354,15 +243,15 @@
         <label class="w3-large"><i class="fas fa-users"></i> <b>Is your event open to the public? <span
               class="w3-text-red">*</span></b></label>
         <br />
-        <input class="w3-radio" type="radio" id="public1" name="entry.117832584" value="Yes"
+        <input class="w3-radio" type="radio" id="public" name="entry.117832584" value="Yes"
           onclick="document.getElementById('input_entryfee').style.display='block'">
-        <label for="public1">Yes</label><br />
-        <input class="w3-radio" type="radio" id="public2" name="entry.117832584" value="No"
+        <label>Yes</label><br />
+        <input class="w3-radio" type="radio" id="public" name="entry.117832584" value="No"
           onclick="document.getElementById('input_entryfee').style.display='none'">
-        <label for="public2">No</label><br />
-        <input class="w3-radio" type="radio" id="public3" name="entry.117832584" value="Unknown"
+        <label>No</label><br />
+        <input class="w3-radio" type="radio" id="public" name="entry.117832584" value="Unknown"
           onclick="document.getElementById('input_entryfee').style.display='block'">
-        <label for="public3">I don't know</label><br />
+        <label>I don't know</label><br />
         <br />
       </div>
 
@@ -381,12 +270,12 @@
         <label class="w3-large"><i class="fas fa-hand-holding-usd"></i> <b>Are event attendees required to purchase
             tickets to the event? <span class="w3-text-red">*</span></b></label>
         <br />
-        <input class="w3-radio" type="radio" id="entryfee1" name="entry.1996365247" value="Yes">
-        <label for="entryfee1">Yes</label><br />
-        <input class="w3-radio" type="radio" id="entryfee2" name="entry.1996365247" value="No">
-        <label for="entryfee2">No</label><br />
-        <input class="w3-radio" type="radio" id="entryfee3" name="entry.1996365247" value="Unknown">
-        <label for="entryfee3">I don't know</label><br />
+        <input class="w3-radio" type="radio" id="entryfee" name="entry.1996365247" value="Yes">
+        <label>Yes</label><br />
+        <input class="w3-radio" type="radio" id="entryfee" name="entry.1996365247" value="No">
+        <label>No</label><br />
+        <input class="w3-radio" type="radio" id="entryfee" name="entry.1996365247" value="Unknown">
+        <label>I don't know</label><br />
         <br />
       </div>
 
@@ -396,6 +285,14 @@
             Location</b></label>
         <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-hover-border-red" type="text" id="location"
           name="entry.361083750" placeholder="123 Main St, Austin, TX 78701" />
+      </div>
+
+      <!-- // Do they have a specific date and time? // -->
+      <div id="val_datetime_known" name="val_datetime_known"
+        class="w3-row w3-container w3-yellow w3-display-container" style="display: none">
+        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i
+            class="fas fa-times"></i></span>
+        <p>Please indicate if you have a specific date and time. If you do not have a specific date and time, or if you have multiple possibilities, please select "No."</p>
       </div>
 
       <!-- // Specific Date and Time? Validation // -->
@@ -421,12 +318,12 @@
           <p>Be sure to check our <a href="https://sites.google.com/tddt.org/tddt/calendar" target="_blank">Performance
               Calendar</a> to ensure that there are no existing time conflicts.</p>
         </label>
-        <input class="w3-radio" type="radio" id="knownstart1" name="entry.2006112932" value="Yes"
+        <input class="w3-radio" type="radio" id="knownstart" name="entry.2006112932" value="Yes"
           onclick="document.getElementById('input_datetimespecific').style.display='block'; document.getElementById('input_datetimenonspecific').style.display='none'">
-        <label for="knownstart1">Yes</label><br />
-        <input class="w3-radio" type="radio" id="knownstart2" name="entry.2006112932" value="No"
+        <label>Yes</label><br />
+        <input class="w3-radio" type="radio" id="knownstart" name="entry.2006112932" value="No"
           onclick="document.getElementById('input_datetimespecific').style.display='none'; document.getElementById('input_datetimenonspecific').style.display='block'">
-        <label for="knownstart2">No</label><br />
+        <label>No</label><br />
         <br />
       </div>
 
@@ -471,12 +368,12 @@
             team?</b> <i class="fas fa-question-circle	w3-text-blue"
             onclick="document.getElementById('help_staging').style.display='block'"></i></label>
         <br />
-        <input type="radio" id="stagingarea1" name="entry.4885714" class="w3-radio" value="No">
-        <label for="stagingarea1">No.</label><br />
-        <input type="radio" id="stagingarea2" name="entry.4885714" class="w3-radio" value="Yes">
-        <label for="stagingarea2">Yes.</label><br />
-        <input type="radio" id="stagingarea3" name="entry.4885714" class="w3-radio" value="Unknown">
-        <label for="stagingarea3">I don't know.</label><br />
+        <input type="radio" id="stagingarea" name="entry.4885714" class="w3-radio" value="No">
+        <label>No.</label><br />
+        <input type="radio" id="stagingarea" name="entry.4885714" class="w3-radio" value="Yes">
+        <label>Yes.</label><br />
+        <input type="radio" id="stagingarea" name="entry.4885714" class="w3-radio" value="Unknown">
+        <label>I don't know.</label><br />
         <br />
       </div>
 
@@ -493,36 +390,36 @@
       <!-- // Referral // -->
       <div id="input_referral" name="input_referral" class="w3-row w3-container">
         <label class="w3-large"><i class="fas fa-comments"></i> <b>Where did you hear about us?</b></label><br />
-        <input type="radio" id="referral1" name="entry.1502696157" class="w3-radio" value="Facebook"
+        <input type="radio" id="referral" name="entry.1502696157" class="w3-radio" value="Facebook"
           onclick="document.getElementById('input_referral_other').style.display='none'">
-        <label for="referral1">Facebook</label><br />
-        <input type="radio" id="referral2" name="entry.1502696157" class="w3-radio" value="Flyer"
+        <label>Facebook</label><br />
+        <input type="radio" id="referral" name="entry.1502696157" class="w3-radio" value="Flyer"
           onclick="document.getElementById('input_referral_other').style.display='none'">
-        <label for="referral2">Flyer</label><br />
-        <input type="radio" id="referral3" name="entry.1502696157" class="w3-radio" value="Google"
+        <label>Flyer</label><br />
+        <input type="radio" id="referral" name="entry.1502696157" class="w3-radio" value="Google"
           onclick="document.getElementById('input_referral_other').style.display='none'">
-        <label for="referral3">Google</label><br />
-        <input type="radio" id="referral4" name="entry.1502696157" class="w3-radio" value="Performance"
+        <label>Google</label><br />
+        <input type="radio" id="referral" name="entry.1502696157" class="w3-radio" value="Performance"
           onclick="document.getElementById('input_referral_other').style.display='none'">
-        <label for="referral4">I saw you perform (in person)</label><br />
-        <input type="radio" id="referral5" name="entry.1502696157" class="w3-radio" value="Instagram"
+        <label>I saw you perform (in person)</label><br />
+        <input type="radio" id="referral" name="entry.1502696157" class="w3-radio" value="Instagram"
           onclick="document.getElementById('input_referral_other').style.display='none'">
-        <label for="referral5">Instagram</label><br />
-        <input type="radio" id="referral6" name="entry.1502696157" class="w3-radio" value="Twitter"
+        <label>Instagram</label><br />
+        <input type="radio" id="referral" name="entry.1502696157" class="w3-radio" value="Twitter"
           onclick="document.getElementById('input_referral_other').style.display='none'">
-        <label for="referral6">Twitter</label><br />
-        <input type="radio" id="referral7" name="entry.1502696157" class="w3-radio" value="USDLDF"
+        <label>Twitter</label><br />
+        <input type="radio" id="referral" name="entry.1502696157" class="w3-radio" value="USDLDF"
           onclick="document.getElementById('input_referral_other').style.display='none'">
-        <label for="referral7">USDLDF</label><br />
-        <input type="radio" id="referral8" name="entry.1502696157" class="w3-radio" value="Word of Mouth"
+        <label>USDLDF</label><br />
+        <input type="radio" id="referral" name="entry.1502696157" class="w3-radio" value="Word of Mouth"
           onclick="document.getElementById('input_referral_other').style.display='none'">
-        <label for="referral8">Word of Mouth</label><br />
-        <input type="radio" id="referral9" name="entry.1502696157" class="w3-radio" value="YouTube"
+        <label>Word of Mouth</label><br />
+        <input type="radio" id="referral" name="entry.1502696157" class="w3-radio" value="YouTube"
           onclick="document.getElementById('input_referral_other').style.display='none'">
-        <label for="referral9">YouTube</label><br />
-        <input type="radio" id="referral10" name="entry.1502696157" class="w3-radio" value="Other"
+        <label>YouTube</label><br />
+        <input type="radio" id="referral" name="entry.1502696157" class="w3-radio" value="Other"
           onclick="document.getElementById('input_referral_other').style.display='block'">
-        <label for="referral10">Other</label><br />
+        <label>Other</label><br />
         <br />
       </div>
 
