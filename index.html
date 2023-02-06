@@ -41,12 +41,16 @@
         document.getElementById('request').style.display = "none";
         document.getElementById('loading').style.display = "block";
         document.getElementById('request').submit();
-        document.getElementById('loading').style.display = "none";
-        document.getElementById('output').style.display = "block";
+        setTimeout(displayError, 5000);
         return true;
       } else {
         return false;
       }
+    }
+
+    function displayError() {
+      document.getElementById('loading').style.display = "none";
+      document.getElementById('output').style.display = "block";
     }
 
     function preventFormSubmit() {
