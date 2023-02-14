@@ -146,6 +146,9 @@ function validateForm() {
   let valParkingspots = form["parkingspots"].value;
   console.log(`Received parking spots : ` + valParkingspots);
 
+  let valWater = form["water"].value;
+  console.log(`Received water : ` + valWater);
+
   let valStagingarea = form["stagingarea"].value;
   console.log(`Received staging area: ` + valStagingarea);
 
